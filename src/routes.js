@@ -8,6 +8,7 @@ import SessionController from './app/controllers/SessionController';
 import authMiddleware from './app/middlewares/auth';
 import ProviderController from './app/controllers/ProviderController';
 import AppointmentController from './app/controllers/AppointmentController';
+import ScheduleController from './app/controllers/ScheduleController';
 import FileController from './app/controllers/FileController';
 // instanciando a rota
 const routes = new Router();
@@ -20,6 +21,8 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/providers', ProviderController.index);
+
+routes.get('/schedules', ScheduleController.index);
 
 routes.get('/appointment', AppointmentController.index);
 routes.post('/appointment', AppointmentController.store);
